@@ -10,7 +10,9 @@ function addStyle(styleString) {
 function reqListener () {
     addStyle(this.responseText);
 }
-if(window.location.href.indexOf("digimon.ddns.net.psim.us")) {
+//Injection start
+const dwin = nw.Window.get();
+dwin.on('loaded', function(dwindow) {
     try {
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", reqListener);
@@ -19,4 +21,14 @@ if(window.location.href.indexOf("digimon.ddns.net.psim.us")) {
     } catch(e) {
         window.alert("ERROR: " + e.message);
     }
+});
+dwin.on('maximize', function(dwindow) {
+    localStorage.setItem("maximized", "true");
+});
+dwin.on('restore', function(dwindow) {
+    localStorage.setItem("maximized", "false");
+});
+const is_maximized = localStorage.getItem("maximized");
+if(is_maximized == "true") {
+    dwin.maximize();
 }
