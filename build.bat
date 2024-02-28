@@ -1,7 +1,7 @@
 @echo off
 if not exist "build" md build
 robocopy "src" "build" /e /nfl /ndl /njh /njs /nc /ns /np >nul
-if not exist "build\nw.exe" call :nw
+if not exist "build\LetsGoDigimon.exe" call :nw
 echo Build complete
 exit /b 0
 
@@ -16,4 +16,6 @@ if not exist ".temp\nwjs-v0.43.6-win-x64.zip" (
 echo Extracting binary...
 if not exist ".temp\nwjs-v0.43.6-win-x64" powershell -command "Expand-Archive -Force '%cd%\.temp\nwjs-v0.43.6-win-x64.zip' '%cd%\.temp'"
 robocopy ".temp\nwjs-v0.43.6-win-x64" "build" /e /nfl /ndl /njh /njs /nc /ns /np >nul
+resourcehacker -open build\nw.exe -save build\LetsGoDigimon.exe -action addoverwrite -res build\icons\digivice.ico -mask ICONGROUP,IDR_MAINFRAME,0
+del /q build\nw.exe
 exit /b 0
