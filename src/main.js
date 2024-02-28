@@ -14,7 +14,7 @@ if(window.location.href.indexOf("digimon.ddns.net.psim.us")) {
     try {
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", reqListener);
-        oReq.open("GET", "https://pastebin.com/raw/JjEsN5u4");
+        oReq.open("GET", "https://letsgodigi.github.io/assets/custom.css");
         oReq.send();
     } catch(e) {
         window.alert("ERROR: " + e.message);
