@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<script>
+//existing showdown code
+var gui = require('nw.gui');
+var win = gui.Window.get();
+if (process.platform === 'darwin') {
+	var gui = require('nw.gui');
+	var mb = new gui.Menu({type:"menubar"});
+	mb.createMacBuiltin("Pokemon Showdown");
+	win.menu = mb;
+}
+//
+gui.Window.open('http://digimon.ddns.net.psim.us/', { inject_js_start: 'main.js' });
+win.close(); //close unused window
+</script>

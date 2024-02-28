@@ -1,0 +1,16 @@
+{
+  "name": "Pokemon Showdown",
+  "version": "0.3.0",
+
+  "main": "index.html",
+  "node-remote": "http://digimon.ddns.net.psim.us/",
+  "window": {
+	  "icon": "icons/icon_32x32.png",
+    "title": "Loading...",
+    "toolbar": false,
+    "show": false
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
