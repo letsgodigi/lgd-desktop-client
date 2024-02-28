@@ -1,6 +1,6 @@
 @echo off
 if not exist "build" md build
-robocopy "src" "build" /nfl /ndl /njh /njs /nc /ns /np >nul
+robocopy "src" "build" /e /nfl /ndl /njh /njs /nc /ns /np >nul
 if not exist "build\nw.exe" call :nw
 echo Build complete
 exit /b 0
