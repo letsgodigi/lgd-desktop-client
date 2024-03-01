@@ -10,6 +10,13 @@ if (process.platform === 'darwin') {
 	win.menu = mb;
 }
 //
-nw.Window.open('http://digimon.ddns.net.psim.us/', { id: 'dwin', inject_js_start: 'main.js' });
+nw.Window.open(
+	'http://digimon.ddns.net.psim.us/',
+	{
+		id: 'dwin',
+		title: 'Loading...',
+		inject_js_start: 'main.js'
+	}
+);
 win.close(); //close unused window
 </script>
