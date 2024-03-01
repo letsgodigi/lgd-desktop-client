@@ -1,6 +1,6 @@
 {
-  "name": "Pokemon Showdown",
-  "version": "0.3.0",
+  "name": "letsgodigimon",
+  "version": "0.3.1",
 
   "main": "index.html",
   "node-remote": "http://digimon.ddns.net.psim.us/",

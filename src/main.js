@@ -10,17 +10,20 @@ function addStyle(styleString) {
 function reqListener () {
     addStyle(this.responseText);
 }
-//Injection start
-const dwin = nw.Window.get();
-dwin.on('loaded', function(dwindow) {
+function injectCSSUrl(URL) {
     try {
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", reqListener);
-        oReq.open("GET", "https://letsgodigi.github.io/assets/custom.css");
+        oReq.open("GET", URL);
         oReq.send();
     } catch(e) {
         window.alert("ERROR: " + e.message);
     }
+}
+//Injection start
+const dwin = nw.Window.get();
+dwin.on('loaded', function(dwindow) {
+    injectCSSUrl("https://letsgodigi.github.io/assets/custom.css");
 });
 dwin.on('maximize', function(dwindow) {
     localStorage.setItem("maximized", "true");
