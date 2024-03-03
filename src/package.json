@@ -1,6 +1,6 @@
 {
   "name": "letsgodigimon",
-  "version": "0.3.1",
+  "version": "0.3.2",
 
   "main": "index.html",
   "node-remote": "http://digimon.ddns.net.psim.us/",
