@@ -2,7 +2,7 @@ function checkForUpdate(remote) {
     const package = require('./package.json');
     if(package.version != remote) {
         const update = window.confirm("𝗡𝗲𝘄 𝗰𝗹𝗶𝗲𝗻𝘁 𝘂𝗽𝗱𝗮𝘁𝗲: " + remote + "\nWould you like to download the updated client?");
-        if(update) nw.Shell.openExternal("https://github.com/letsgodigi/letsgodigi-desktop-client/releases/latest");
+        if(update) nw.Shell.openExternal("https://github.com/letsgodigi/lgd-desktop-client/releases/latest");
     }
 }
 function getRemoteVersion() {
@@ -12,7 +12,7 @@ function getRemoteVersion() {
         const js = JSON.parse(this.responseText);
         checkForUpdate(js.version);
     });
-    oReq.open("GET", "https://raw.githubusercontent.com/letsgodigi/letsgodigi-desktop-client/main/src/package.json");
+    oReq.open("GET", "https://raw.githubusercontent.com/letsgodigi/lgd-desktop-client/main/src/package.json");
     oReq.timeout = 5000;
     oReq.send();
 }
