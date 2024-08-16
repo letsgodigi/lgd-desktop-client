@@ -1,9 +1,21 @@
+<!DOCTYPE html>
+<style>
+body {
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0px 50%;
+}
+</style> 
+<script>
 function checkForUpdate(remote) {
     const package = require('./package.json');
     if(package.version != remote) {
-        const update = window.confirm("𝗡𝗲𝘄 𝗰𝗹𝗶𝗲𝗻𝘁 𝘂𝗽𝗱𝗮𝘁𝗲: " + remote + "\nWould you like to download the updated client?");
+        const update = window.confirm("New update: " + remote + "\nWould you like to download the updated client?");
         if(update) nw.Shell.openExternal("https://github.com/letsgodigi/lgd-desktop-client/releases/latest");
     }
+    window.location.replace('http://digimonshowdown.serverpit.com/');
 }
 function getRemoteVersion() {
     var oReq = new XMLHttpRequest();
@@ -16,16 +28,8 @@ function getRemoteVersion() {
     oReq.timeout = 5000;
     oReq.send();
 }
-//Injection start
-getRemoteVersion();
+//Start
 const dwin = nw.Window.get();
-dwin.on('maximize', function(dwindow) {
-    localStorage.setItem("maximized", "true");
-});
-dwin.on('restore', function(dwindow) {
-    localStorage.setItem("maximized", "false");
-});
-const is_maximized = localStorage.getItem("maximized");
-if(is_maximized == "true") {
-    dwin.maximize();
-}
+dwin.maximize();
+getRemoteVersion();
+</script>

@@ -11,11 +11,10 @@ if (process.platform === 'darwin') {
 }
 //
 nw.Window.open(
-	'http://digimonshowdown.serverpit.com/',
+	'client.html',
 	{
 		id: 'dwin',
-		title: 'Loading...',
-		inject_js_start: 'main.js'
+		title: 'Loading...'
 	}
 );
 win.close(); //close unused window
